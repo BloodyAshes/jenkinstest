@@ -9,7 +9,14 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-
+allure {
+    version = "${allureVersion}"
+    autoconfigure = true
+    aspectjweaver = true
+    useJUnit5 {
+        version = "${allureVersion}"
+    }
+}
 
 
 test {
@@ -27,6 +34,9 @@ dependencies {
     compile("org.junit.jupiter:junit-jupiter-api:5.6.2")
     compile("org.junit.jupiter:junit-jupiter-engine:5.6.2")
     compile("org.junit.jupiter:junit-jupiter-params:5.6.2")
+    compile("io.qameta.allure:allure-java-commons:2.13.5")
+    compile("io.qameta.allure:allure-selenide:2.13.5")
+    compile("io.qameta.allure:allure-rest-assured:2.13.5")
 }
 
 compileTestJava {
